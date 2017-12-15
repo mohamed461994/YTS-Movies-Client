@@ -27,9 +27,30 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bfJ-N3-sMR" id="UDw-uV-ca7">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="122.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GE5-KL-1S0">
+                                                    <rect key="frame" x="58" y="8" width="276" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GE5-KL-1S0" firstAttribute="top" secondItem="UDw-uV-ca7" secondAttribute="top" constant="8" id="EQS-Dq-I5t"/>
+                                                <constraint firstAttribute="trailing" secondItem="GE5-KL-1S0" secondAttribute="trailing" constant="41" id="G5u-C1-woj"/>
+                                                <constraint firstItem="GE5-KL-1S0" firstAttribute="leading" secondItem="UDw-uV-ca7" secondAttribute="leading" constant="58" id="Uku-qK-bEQ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="lblName" destination="GE5-KL-1S0" id="9UK-th-AIa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="y5K-ww-1zk"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Z8S-EB-wKR"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
