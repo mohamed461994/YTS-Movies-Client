@@ -72,6 +72,9 @@
                             <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="webSearch"/>
                         </textField>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchLTxtField" destination="04C-g3-gXi" id="r2h-Ue-aDp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
