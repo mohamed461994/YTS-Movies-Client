@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		542325B64309CF9E0202FBFA /* Pods_YTS_Movies_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBA4B2C2CC5278BC8A5962D /* Pods_YTS_Movies_Client.framework */; };
 		D940FD5C1FE46CCF00DFA7CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FD5B1FE46CCF00DFA7CB /* AppDelegate.swift */; };
 		D940FD5E1FE46CCF00DFA7CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FD5D1FE46CCF00DFA7CB /* ViewController.swift */; };
 		D940FD611FE46CCF00DFA7CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D940FD5F1FE46CCF00DFA7CB /* Main.storyboard */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B8281CD6906AE8EDB4EF10D /* Pods-YTS Movies Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTS Movies Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-YTS Movies Client/Pods-YTS Movies Client.release.xcconfig"; sourceTree = "<group>"; };
+		9BBA4B2C2CC5278BC8A5962D /* Pods_YTS_Movies_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTS_Movies_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAAECF04162C899BE01EE831 /* Pods-YTS Movies Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTS Movies Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YTS Movies Client/Pods-YTS Movies Client.debug.xcconfig"; sourceTree = "<group>"; };
 		D940FD581FE46CCF00DFA7CB /* YTS Movies Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YTS Movies Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D940FD5B1FE46CCF00DFA7CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D940FD5D1FE46CCF00DFA7CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				542325B64309CF9E0202FBFA /* Pods_YTS_Movies_Client.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3149E21ADB4C76B34841A879 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AAAECF04162C899BE01EE831 /* Pods-YTS Movies Client.debug.xcconfig */,
+				0B8281CD6906AE8EDB4EF10D /* Pods-YTS Movies Client.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A198BB6EC664844C1D985279 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BBA4B2C2CC5278BC8A5962D /* Pods_YTS_Movies_Client.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D940FD4F1FE46CCE00DFA7CB = {
 			isa = PBXGroup;
 			children = (
 				D940FD5A1FE46CCF00DFA7CB /* YTS Movies Client */,
 				D940FD591FE46CCF00DFA7CB /* Products */,
+				3149E21ADB4C76B34841A879 /* Pods */,
+				A198BB6EC664844C1D985279 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D940FD6A1FE46CCF00DFA7CB /* Build configuration list for PBXNativeTarget "YTS Movies Client" */;
 			buildPhases = (
+				7C87EB8C9FB28282759D5F85 /* [CP] Check Pods Manifest.lock */,
 				D940FD541FE46CCF00DFA7CB /* Sources */,
 				D940FD551FE46CCF00DFA7CB /* Frameworks */,
 				D940FD561FE46CCF00DFA7CB /* Resources */,
+				0E08C82D3A34029BE0CE4DBB /* [CP] Embed Pods Frameworks */,
+				81C137CD316268B9074D6D83 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +163,64 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E08C82D3A34029BE0CE4DBB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-YTS Movies Client/Pods-YTS Movies Client-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YTS Movies Client/Pods-YTS Movies Client-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C87EB8C9FB28282759D5F85 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YTS Movies Client-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81C137CD316268B9074D6D83 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YTS Movies Client/Pods-YTS Movies Client-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D940FD541FE46CCF00DFA7CB /* Sources */ = {
@@ -280,6 +365,7 @@
 		};
 		D940FD6B1FE46CCF00DFA7CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAAECF04162C899BE01EE831 /* Pods-YTS Movies Client.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -295,6 +381,7 @@
 		};
 		D940FD6C1FE46CCF00DFA7CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B8281CD6906AE8EDB4EF10D /* Pods-YTS Movies Client.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
