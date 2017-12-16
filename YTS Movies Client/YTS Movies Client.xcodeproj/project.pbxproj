@@ -13,6 +13,7 @@
 		D940FD631FE46CCF00DFA7CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D940FD621FE46CCF00DFA7CB /* Assets.xcassets */; };
 		D940FD661FE46CCF00DFA7CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D940FD641FE46CCF00DFA7CB /* LaunchScreen.storyboard */; };
 		D940FD6E1FE4769F00DFA7CB /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FD6D1FE4769F00DFA7CB /* MoviesTableViewCell.swift */; };
+		D940FD701FE5120D00DFA7CB /* ViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FD6F1FE5120D00DFA7CB /* ViewMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D940FD651FE46CCF00DFA7CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D940FD671FE46CCF00DFA7CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D940FD6D1FE4769F00DFA7CB /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
+		D940FD6F1FE5120D00DFA7CB /* ViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				D940FD5B1FE46CCF00DFA7CB /* AppDelegate.swift */,
 				D940FD5D1FE46CCF00DFA7CB /* ViewController.swift */,
 				D940FD5F1FE46CCF00DFA7CB /* Main.storyboard */,
+				D940FD6F1FE5120D00DFA7CB /* ViewMode.swift */,
 				D940FD6D1FE4769F00DFA7CB /* MoviesTableViewCell.swift */,
 				D940FD621FE46CCF00DFA7CB /* Assets.xcassets */,
 				D940FD641FE46CCF00DFA7CB /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D940FD6E1FE4769F00DFA7CB /* MoviesTableViewCell.swift in Sources */,
+				D940FD701FE5120D00DFA7CB /* ViewMode.swift in Sources */,
 				D940FD5E1FE46CCF00DFA7CB /* ViewController.swift in Sources */,
 				D940FD5C1FE46CCF00DFA7CB /* AppDelegate.swift in Sources */,
 			);
