@@ -9,8 +9,8 @@
 import UIKit
 
 class MoviesTableViewCell: UITableViewCell {
-
-
+    @IBOutlet weak var lblRating: UILabel!
+    @IBOutlet weak var lblCategory: UILabel!
+    @IBOutlet weak var moviesImage: UIImageView!
     @IBOutlet weak var lblName: UILabel!
-    
 }

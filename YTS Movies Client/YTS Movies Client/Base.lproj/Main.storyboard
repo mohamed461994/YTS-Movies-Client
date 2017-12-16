@@ -103,7 +103,10 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="lblCategory" destination="nFC-Sk-1Oo" id="DyK-b4-Kfd"/>
                                             <outlet property="lblName" destination="GE5-KL-1S0" id="9UK-th-AIa"/>
+                                            <outlet property="lblRating" destination="Hhf-0O-Jiv" id="ttx-lM-v6K"/>
+                                            <outlet property="moviesImage" destination="axc-20-TSk" id="BgO-lk-j8x"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
