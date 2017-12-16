@@ -9,12 +9,11 @@
 import Foundation
 import Alamofire
 class MoviesData{
+    private var moviesList:[Movie]=[]
     private var url:String?
     private var parameters: Parameters?
     private var jsonData:Any?{
-        didSet{
-            parseJSON()
-        }
+        didSet{parseJSON()}
     }
     init(url:String , parameters: Parameters) {
         self.url = url
@@ -37,6 +36,12 @@ extension MoviesData{
         let allData = jsonData as? [String : Any]
         let movesData = allData!["data"] as? [String : Any]
         let movies = movesData!["movies"] as? [[String:Any]]
-        print(movies)
+        for movie in movies! {
+            moviesList.append(Movie(id: movie["id"] as? Int,
+                                    imgURL: movie["medium_cover_image"] as? String,
+                                    name: movie["title_english"] as? String,
+                                    rate:  movie["rating"] as? Float ,
+                                    typeList: (movie["genres"] as? [String])!))
+        }
     }
 }
