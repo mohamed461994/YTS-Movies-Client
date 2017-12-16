@@ -21,6 +21,8 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
