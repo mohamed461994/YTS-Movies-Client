@@ -7,13 +7,13 @@
 //
 
 import UIKit
-
+let notificationForReloadTable="reload"
 class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
     var viewModel=ViewModel()
+    
+    @IBOutlet weak var moviesTableView: UITableView!
     @IBOutlet weak var searchLTxtField: UITextField!{
-        didSet{
-            searchLTxtField.delegate=self
-        }
+        didSet{searchLTxtField.delegate=self}
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // search for movies
@@ -22,8 +22,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        createNotificationForReloadData()
     }
 
 
@@ -35,7 +34,16 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         cell.lblName.text = viewModel.movieName()
         return cell
     }
-
-
+    func createNotificationForReloadData(){
+        let notifiReload = Notification.Name(notificationForReloadTable)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.reload) , name: notifiReload, object: nil)
+    }
+    @objc func reload(notification:NSNotification){
+        print("Get Notified")
+        DispatchQueue.main.async {
+            self.moviesTableView.reloadData()
+        }
+        
+    }
 }
 

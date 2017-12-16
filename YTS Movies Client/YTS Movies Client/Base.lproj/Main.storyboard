@@ -133,6 +133,7 @@
                         </textField>
                     </navigationItem>
                     <connections>
+                        <outlet property="moviesTableView" destination="0YP-OB-2hE" id="hF4-Jp-tJ1"/>
                         <outlet property="searchLTxtField" destination="04C-g3-gXi" id="r2h-Ue-aDp"/>
                     </connections>
                 </viewController>

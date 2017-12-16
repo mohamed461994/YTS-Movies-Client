@@ -12,6 +12,13 @@ class MoviesData{
     private var moviesList:[Movie]=[]
     private var url:String?
     private var parameters: Parameters?
+    private var parseIsDone:Bool?{
+        didSet{
+            //push notification to reload data
+            let notifiReload = Notification.Name(notificationForReloadTable)
+            NotificationCenter.default.post(name: notifiReload, object: nil)
+        }
+    }
     private var jsonData:Any?{
         didSet{parseJSON()}
     }
@@ -43,5 +50,6 @@ extension MoviesData{
                                     rate:  movie["rating"] as? Float ,
                                     typeList: (movie["genres"] as? [String])!))
         }
+        parseIsDone=true
     }
 }
