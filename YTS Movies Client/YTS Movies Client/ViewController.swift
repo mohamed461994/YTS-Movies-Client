@@ -31,7 +31,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MoviesTableViewCell
-        cell.lblName.text = viewModel.movieName()
+        cell.lblName.text = viewModel.movieName(indexPath: indexPath)
         return cell
     }
     func createNotificationForReloadData(){
@@ -39,11 +39,10 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.reload) , name: notifiReload, object: nil)
     }
     @objc func reload(notification:NSNotification){
-        print("Get Notified")
+        //print("Get Notified")
         DispatchQueue.main.async {
             self.moviesTableView.reloadData()
         }
-        
     }
 }
 

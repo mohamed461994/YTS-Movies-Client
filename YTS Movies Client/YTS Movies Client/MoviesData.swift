@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 class MoviesData{
-    private var moviesList:[Movie]=[]
+    var moviesList:[Movie]=[]
     private var url:String?
     private var parameters: Parameters?
     private var parseIsDone:Bool?{
