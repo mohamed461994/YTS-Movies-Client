@@ -13,8 +13,7 @@ class MoviesData{
     private var parameters: Parameters?
     private var jsonData:Any?{
         didSet{
-            print("json data set")
-            //parseJSON()
+            parseJSON()
         }
     }
     init(url:String , parameters: Parameters) {
@@ -30,5 +29,14 @@ class MoviesData{
                 self.jsonData=json
             }
         }
+    }
+}
+
+extension MoviesData{
+    func parseJSON(){
+        let allData = jsonData as? [String : Any]
+        let movesData = allData!["data"] as? [String : Any]
+        let movies = movesData!["movies"] as? [[String:Any]]
+        print(movies)
     }
 }

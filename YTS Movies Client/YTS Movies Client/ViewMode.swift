@@ -20,7 +20,7 @@ class ViewModel{
     }
     func test(){
         let urlForList="https://yts.am/api/v2/list_movies.json"
-        let m = MoviesData(url: urlForList,parameters:["page":100])
+        _ = MoviesData(url: urlForList,parameters:["page":100])
     }
     
 }
