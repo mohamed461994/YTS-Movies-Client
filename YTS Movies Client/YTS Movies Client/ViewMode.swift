@@ -8,6 +8,9 @@
 
 import Foundation
 class ViewModel{
+    init(){
+        test()
+    }
     func numberOfRows()->Int{
         return 10
     }
@@ -15,4 +18,9 @@ class ViewModel{
         
         return "Flatliners (2017)"
     }
+    func test(){
+        let urlForList="https://yts.am/api/v2/list_movies.json"
+        let m = MoviesData(url: urlForList,parameters:["page":100])
+    }
+    
 }
