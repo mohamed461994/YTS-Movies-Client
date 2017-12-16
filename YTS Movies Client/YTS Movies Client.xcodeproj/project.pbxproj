@@ -16,6 +16,7 @@
 		D940FD6E1FE4769F00DFA7CB /* MoviesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FD6D1FE4769F00DFA7CB /* MoviesTableViewCell.swift */; };
 		D940FD701FE5120D00DFA7CB /* ViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FD6F1FE5120D00DFA7CB /* ViewMode.swift */; };
 		D940FD741FE5C20600DFA7CB /* MoviesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FD731FE5C20600DFA7CB /* MoviesData.swift */; };
+		D940FD7A1FE5CDA800DFA7CB /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FD791FE5CDA800DFA7CB /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		D940FD6D1FE4769F00DFA7CB /* MoviesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTableViewCell.swift; sourceTree = "<group>"; };
 		D940FD6F1FE5120D00DFA7CB /* ViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMode.swift; sourceTree = "<group>"; };
 		D940FD731FE5C20600DFA7CB /* MoviesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesData.swift; sourceTree = "<group>"; };
+		D940FD791FE5CDA800DFA7CB /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				D940FD5B1FE46CCF00DFA7CB /* AppDelegate.swift */,
+				D940FD791FE5CDA800DFA7CB /* Movie.swift */,
 				D940FD5D1FE46CCF00DFA7CB /* ViewController.swift */,
 				D940FD5F1FE46CCF00DFA7CB /* Main.storyboard */,
 				D940FD731FE5C20600DFA7CB /* MoviesData.swift */,
@@ -232,6 +235,7 @@
 			files = (
 				D940FD6E1FE4769F00DFA7CB /* MoviesTableViewCell.swift in Sources */,
 				D940FD701FE5120D00DFA7CB /* ViewMode.swift in Sources */,
+				D940FD7A1FE5CDA800DFA7CB /* Movie.swift in Sources */,
 				D940FD5E1FE46CCF00DFA7CB /* ViewController.swift in Sources */,
 				D940FD741FE5C20600DFA7CB /* MoviesData.swift in Sources */,
 				D940FD5C1FE46CCF00DFA7CB /* AppDelegate.swift in Sources */,
