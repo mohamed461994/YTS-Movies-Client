@@ -7,6 +7,17 @@
 //
 
 import Foundation
+import Alamofire
 class MoviesData{
+    private var url:String?
+    private var parameters: Parameters?
+    init(url:String , parameters: Parameters) {
+        self.url = url
+        self.parameters=parameters
+        getJSON()
+    }
+    func getJSON(){
+        
+    }
     
 }
