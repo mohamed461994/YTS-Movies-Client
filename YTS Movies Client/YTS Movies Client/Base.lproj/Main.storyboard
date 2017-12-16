@@ -25,7 +25,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bfJ-N3-sMR" id="UDw-uV-ca7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="122.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GE5-KL-1S0">
@@ -39,6 +39,7 @@
                                                 <constraint firstItem="GE5-KL-1S0" firstAttribute="top" secondItem="UDw-uV-ca7" secondAttribute="top" constant="8" id="EQS-Dq-I5t"/>
                                                 <constraint firstAttribute="trailing" secondItem="GE5-KL-1S0" secondAttribute="trailing" constant="41" id="G5u-C1-woj"/>
                                                 <constraint firstItem="GE5-KL-1S0" firstAttribute="leading" secondItem="UDw-uV-ca7" secondAttribute="leading" constant="58" id="Uku-qK-bEQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="GE5-KL-1S0" secondAttribute="bottom" constant="93.5" id="vIR-kp-SjU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

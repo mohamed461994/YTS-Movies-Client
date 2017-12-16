@@ -8,5 +8,11 @@
 
 import Foundation
 class ViewModel{
-    
+    func numberOfRows()->Int{
+        return 10
+    }
+    func movieName()->String{
+        
+        return "Hello World!"
+    }
 }

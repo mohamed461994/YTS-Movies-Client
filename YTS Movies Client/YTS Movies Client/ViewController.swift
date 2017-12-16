@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
-
+    var viewModel=ViewModel()
     @IBOutlet weak var searchLTxtField: UITextField!{
         didSet{
             searchLTxtField.delegate=self
@@ -26,11 +26,11 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
 
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.numberOfRows()
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MoviesTableViewCell
-        cell.lblName.text = "Hello"
+        cell.lblName.text = viewModel.movieName()
         return cell
     }
 
