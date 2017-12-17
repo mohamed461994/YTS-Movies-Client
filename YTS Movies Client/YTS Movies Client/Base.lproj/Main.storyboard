@@ -23,7 +23,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Movies-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="YTS_Movies_Client" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,7 +38,7 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="GsI-tq-yja">
                                 <rect key="frame" x="177.5" y="355.5" width="20" height="20"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0YP-OB-2hE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0YP-OB-2hE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -137,19 +137,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Yui-UY-Ylm">
-                        <nil key="title"/>
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" minimumFontSize="17" id="04C-g3-gXi">
-                            <rect key="frame" x="35.5" y="7" width="304" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="webSearch"/>
-                        </textField>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Movies" id="Yui-UY-Ylm"/>
                     <connections>
                         <outlet property="moviesTableView" destination="0YP-OB-2hE" id="hF4-Jp-tJ1"/>
-                        <outlet property="searchLTxtField" destination="04C-g3-gXi" id="r2h-Ue-aDp"/>
                         <outlet property="spinner" destination="GsI-tq-yja" id="HlI-gi-T53"/>
                     </connections>
                 </viewController>
@@ -360,7 +350,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qx1-ow-8h1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="843.32833583208401"/>
+            <point key="canvasLocation" x="1254" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MwS-vh-Y2S">

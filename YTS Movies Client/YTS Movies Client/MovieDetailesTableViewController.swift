@@ -42,7 +42,6 @@ class MovieDetailesTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(MovieDetailesTableViewController.reloadData) , name: notifiReload, object: nil)
     }
     @objc func reloadData(notification:NSNotification){
-        print("Get Notified")
         DispatchQueue.main.async {
             self.lblRatting.text = self.viewModel?.getRating()
             self.lblMovieName.text = self.viewModel?.getTitle()

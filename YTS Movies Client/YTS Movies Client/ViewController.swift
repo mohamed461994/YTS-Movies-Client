@@ -4,32 +4,30 @@
 //
 //  Created by MohamedSh on 12/15/17.
 //  Copyright © 2017 MohamedSh. All rights reserved.
-//
-
 import UIKit
 import Kingfisher
 let notificationForReloadTable="reload"
-class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
+class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate{
     var viewModel=ViewModel()
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var moviesTableView: UITableView!
-    @IBOutlet weak var searchLTxtField: UITextField!{
-        didSet{searchLTxtField.delegate=self}
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        // search for movies
-        return true
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        creatSearchBar()
         moviesTableView.isHidden = true
         spinner?.startAnimating()
         self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
         createNotificationForReloadData()
     }
-
-
+    func creatSearchBar(){
+        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: CGFloat(70)))
+        moviesTableView.tableHeaderView = searchBar
+        searchBar.delegate=self
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print(searchBar.text)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows()
     }
@@ -46,9 +44,6 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         if indexPath.row == lastItem {
             viewModel.getMoreData()
         }
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("selectedId = ",viewModel.getMovieId(indexPath: indexPath) )
     }
     func createNotificationForReloadData(){
         let notifiReload = Notification.Name(notificationForReloadTable)
@@ -70,4 +65,3 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         }
     }
 }
-
