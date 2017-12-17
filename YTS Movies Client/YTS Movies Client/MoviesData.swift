@@ -14,10 +14,7 @@ class MoviesData{
     var requestPageNumberOfMoviesData = 1
     private var parameters: Parameters?
     var singleMovieDetails:(id:Int,title:String,rating:Float, category:[String],imgURL:String,year:Int,likes:Int,description:String ,downloads:Int
-        )?{
-        didSet{
-        }
-    }
+        )?
     var requestedFromFirstViewController=true
     private var parseIsDone:Bool?{
         didSet{
@@ -37,7 +34,6 @@ class MoviesData{
         self.parameters=parameters
         getJSON()
     }
-
     func getJSON(){
         let utilityQueue=DispatchQueue.global(qos: .utility)
         Alamofire.request(url!, method: .get,parameters: parameters).responseJSON(queue: utilityQueue){ response in
@@ -80,9 +76,26 @@ extension MoviesData{
 }
 extension MoviesData{
     func parsingDataForSeconViewController(movie: [String:Any]){
-        print("it's Work")
-
-        
+        singleMovieDetails = (id: (movie["id"] as? Int)!
+            ,title:(movie["title_english"] as? String)!
+            ,rating:(movie["rating"] as? Float)!
+            , category:(movie["genres"] as? [String])!
+            ,imgURL: (movie["medium_cover_image"] as? String)!
+            ,year:(movie["year"] as? Int)!
+            ,likes:(movie["like_count"] as? Int)!
+            ,description:(movie["description_intro"] as? String)!
+            ,downloads: (movie["download_count"] as? Int)!
+        )
+        print(singleMovieDetails?.id)
+        print(singleMovieDetails?.title)
+        print(singleMovieDetails?.rating)
+        print(singleMovieDetails?.imgURL)
+        print(singleMovieDetails?.year)
+        print(singleMovieDetails?.likes)
+        print(singleMovieDetails?.description)
+        print(singleMovieDetails?.downloads)
+        print(singleMovieDetails?.category)
+        print(singleMovieDetails!)
     }
     
 }
