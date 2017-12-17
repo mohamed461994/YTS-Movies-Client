@@ -22,6 +22,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        moviesTableView.isHidden = true
         spinner?.startAnimating()
         self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
         createNotificationForReloadData()
@@ -47,6 +48,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         DispatchQueue.main.async {
             self.moviesTableView.reloadData()
             self.spinner?.stopAnimating()
+            self.moviesTableView.isHidden = false
         }
     }
 }
