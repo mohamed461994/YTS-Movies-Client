@@ -5,6 +5,7 @@
 //  Created by MohamedSh on 12/17/17.
 //  Copyright © 2017 MohamedSh. All rights reserved.
 //
+let notificationForLoadData = "loadDataWhenNotify"
 
 import UIKit
 import Kingfisher
@@ -26,7 +27,6 @@ class MovieDetailesTableViewController: UITableViewController {
     @IBOutlet weak var lblMovieDescription: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        id = 1000
         createObserverForReloadData()
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -38,7 +38,7 @@ class MovieDetailesTableViewController: UITableViewController {
         }
     }
     func createObserverForReloadData(){
-        let notifiReload = Notification.Name(notificationForReloadTable)
+        let notifiReload = Notification.Name(notificationForLoadData)
         NotificationCenter.default.addObserver(self, selector: #selector(MovieDetailesTableViewController.reloadData) , name: notifiReload, object: nil)
     }
     @objc func reloadData(notification:NSNotification){

@@ -9,28 +9,25 @@
 import Foundation
 import Alamofire
 class MoviesData{
+    var requestedFromFirstViewController=true
     var moviesList:[Movie]=[]
     private var url:String?
     var requestPageNumberOfMoviesData = 1
     private var parameters: Parameters?
     var singleMovieDetails:(id:Int,title:String,rating:Float, category:[String],imgURL:String,year:Int,likes:Int,description:String ,downloads:Int
         )?
-    var requestedFromFirstViewController=true
+    
     private var parseIsDone:Bool?{
         didSet{
-            //push notification to reload data
+            //push notification to reload data in first view controllet
             let notifiReload = Notification.Name(notificationForReloadTable)
             NotificationCenter.default.post(name: notifiReload, object: nil)
         }
     }
-    private var jsonData:Any?{
-        didSet{parseJSON()}
-    }
+    private var jsonData:Any?{ didSet{parseJSON()} }
     init(url:String , parameters: Parameters) {
         self.url = url
-        if parameters["movie_id"] != nil{
-            requestedFromFirstViewController = false
-        }
+        if parameters["movie_id"] != nil{ requestedFromFirstViewController = false }
         self.parameters=parameters
         getJSON()
     }
@@ -85,6 +82,12 @@ extension MoviesData{
             ,description:(movie["description_intro"] as? String)!
             ,downloads: (movie["download_count"] as? Int)!
         )
+        fireNotificationForSecondViewController()
+    }
+    func fireNotificationForSecondViewController(){
+        // post notification when data is ready to second view controller
+        let notifiReload = Notification.Name(notificationForLoadData)
+        NotificationCenter.default.post(name: notifiReload, object: nil)
     }
     
 }

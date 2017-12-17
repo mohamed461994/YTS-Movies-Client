@@ -64,12 +64,8 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SelecteMovie"{
-            var dist=segue.destination
-            if let navViewController = dist as? UINavigationController{
-                dist=(navViewController.viewControllers[0])
-            }
-            if let vC=dist as? MovieDetailesTableViewController{
-                vC.id = 500
+            if let vC = segue.destination as? MovieDetailesTableViewController {
+                vC.id = viewModel.getMovieId(indexPath: (moviesTableView.indexPathForSelectedRow)!)
             }
         }
     }
