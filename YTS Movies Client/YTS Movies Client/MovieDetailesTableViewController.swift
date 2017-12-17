@@ -20,10 +20,9 @@ class MovieDetailesTableViewController: UITableViewController {
     @IBOutlet weak var lblNumberOfLikes: UILabel!
     @IBOutlet weak var lblNumberOfDownloads: UILabel!
     @IBOutlet weak var lblMovieDescription: UILabel!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        id = 10
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 1 {
@@ -34,6 +33,6 @@ class MovieDetailesTableViewController: UITableViewController {
         }
     }
     func updateUI(){
-        
+        let viewModel=ViewModelForSingleMovie()
     }
 }

@@ -27,7 +27,6 @@ class MoviesData{
         self.url = url
         self.parameters=parameters
         getJSON()
-        
     }
 
     func getJSON(){
