@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 let notificationForReloadTable="reload"
 class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
     var viewModel=ViewModel()
@@ -37,6 +38,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         cell.lblName.text = viewModel.movieName(indexPath: indexPath)
         cell.lblRating.text = viewModel.movieRating(indexPath: indexPath)
         cell.lblCategory.text = viewModel.movieCategories(indexPath: indexPath)
+        cell.moviesImage.kf.setImage(with: viewModel.movieImgURL(indexPath: indexPath))
         return cell
     }
     func createNotificationForReloadData(){

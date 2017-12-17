@@ -26,7 +26,8 @@ class ViewModel{
        let list = moviesData?.moviesList[indexPath.row].typeList
         return (list?.joined(separator: " , "))!
     }
-    func movieImgURL(indexPath:IndexPath)->String{
-        return (moviesData?.moviesList[indexPath.row].imgURL!)!
+    func movieImgURL(indexPath:IndexPath)->URL{
+        return URL(string: (moviesData?.moviesList[indexPath.row].imgURL!)!)!
     }
+    
 }
