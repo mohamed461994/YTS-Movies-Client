@@ -32,6 +32,8 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MoviesTableViewCell
         cell.lblName.text = viewModel.movieName(indexPath: indexPath)
+        cell.lblRating.text = viewModel.movieRating(indexPath: indexPath)
+        cell.lblCategory.text = viewModel.movieCategories(indexPath: indexPath)
         return cell
     }
     func createNotificationForReloadData(){

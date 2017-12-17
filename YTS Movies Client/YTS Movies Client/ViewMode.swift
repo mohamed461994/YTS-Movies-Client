@@ -19,4 +19,14 @@ class ViewModel{
     func movieName(indexPath:IndexPath)->String{
         return moviesData?.moviesList[indexPath.row].name ?? "Movie Name wrong"
     }
+    func movieRating(indexPath:IndexPath)->String{
+        return String(moviesData?.moviesList[indexPath.row].rate ?? 0.0)
+    }
+    func movieCategories(indexPath:IndexPath)->String{
+       let list = moviesData?.moviesList[indexPath.row].typeList
+        return (list?.joined(separator: " , "))!
+    }
+    func movieImgURL(indexPath:IndexPath)->String{
+        return (moviesData?.moviesList[indexPath.row].imgURL!)!
+    }
 }
