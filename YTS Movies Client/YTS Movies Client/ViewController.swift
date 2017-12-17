@@ -41,6 +41,12 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         cell.moviesImage.kf.setImage(with: viewModel.movieImgURL(indexPath: indexPath))
         return cell
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastItem = viewModel.numberOfRows() - 1
+        if indexPath.row == lastItem {
+            viewModel.getMoreData()
+        }
+    }
     func createNotificationForReloadData(){
         let notifiReload = Notification.Name(notificationForReloadTable)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.reload) , name: notifiReload, object: nil)

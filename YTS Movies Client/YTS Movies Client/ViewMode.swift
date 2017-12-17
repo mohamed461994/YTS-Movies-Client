@@ -29,5 +29,7 @@ class ViewModel{
     func movieImgURL(indexPath:IndexPath)->URL{
         return URL(string: (moviesData?.moviesList[indexPath.row].imgURL!)!)!
     }
-    
+    func getMoreData(){
+        moviesData?.getMoreDataWhenUserScroll()
+    }
 }
