@@ -11,7 +11,7 @@ class ViewModel{
     var moviesData:MoviesData?
     init(){
         let urlForList="https://yts.am/api/v2/list_movies.json"
-        moviesData = MoviesData(url: urlForList,parameters:["page":100])
+        moviesData = MoviesData(url: urlForList,parameters:["page":1])
     }
     func numberOfRows()->Int{
         return moviesData?.moviesList.count ?? 0

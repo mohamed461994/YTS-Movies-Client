@@ -11,6 +11,7 @@ import Alamofire
 class MoviesData{
     var moviesList:[Movie]=[]
     private var url:String?
+    var requestPageNumberOfMoviesData = 1
     private var parameters: Parameters?
     private var parseIsDone:Bool?{
         didSet{
@@ -26,6 +27,7 @@ class MoviesData{
         self.url = url
         self.parameters=parameters
         getJSON()
+        
     }
 
     func getJSON(){
@@ -51,5 +53,12 @@ extension MoviesData{
                                     typeList: (movie["genres"] as? [String])!))
         }
         parseIsDone=true
+    }
+}
+extension MoviesData{
+    func getMoreDataWhenUserScroll(){
+        requestPageNumberOfMoviesData += 1
+        parameters!["page"] = requestPageNumberOfMoviesData
+        getJSON()
     }
 }
