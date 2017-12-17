@@ -32,4 +32,7 @@ class ViewModel{
     func getMoreData(){
         moviesData?.getMoreDataWhenUserScroll()
     }
+    func getMovieId(indexPath:IndexPath)-> Int{
+        return (moviesData?.moviesList[indexPath.row].id)!
+    }
 }

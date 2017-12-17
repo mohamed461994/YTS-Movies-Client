@@ -47,6 +47,9 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
             viewModel.getMoreData()
         }
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("selectedId = ",viewModel.getMovieId(indexPath: indexPath) )
+    }
     func createNotificationForReloadData(){
         let notifiReload = Notification.Name(notificationForReloadTable)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.reload) , name: notifiReload, object: nil)
