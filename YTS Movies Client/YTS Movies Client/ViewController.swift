@@ -62,5 +62,16 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
             self.moviesTableView.isHidden = false
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SelecteMovie"{
+            var dist=segue.destination
+            if let navViewController = dist as? UINavigationController{
+                dist=(navViewController.viewControllers[0])
+            }
+            if let vC=dist as? MovieDetailesTableViewController{
+                vC.id = 500
+            }
+        }
+    }
 }
 

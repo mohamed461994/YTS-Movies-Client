@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sD0-lv-fo2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7oL-bo-ZgZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -116,6 +116,7 @@
                                             <outlet property="lblName" destination="GE5-KL-1S0" id="9UK-th-AIa"/>
                                             <outlet property="lblRating" destination="Hhf-0O-Jiv" id="ttx-lM-v6K"/>
                                             <outlet property="moviesImage" destination="axc-20-TSk" id="BgO-lk-j8x"/>
+                                            <segue destination="YlW-gr-iAr" kind="show" identifier="SelecteMovie" id="O9z-QM-7Om"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -344,6 +345,7 @@
                             <outlet property="delegate" destination="sD0-lv-fo2" id="GE9-85-ery"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="gvh-nT-bim"/>
                     <connections>
                         <outlet property="lblDescription" destination="aaV-QZ-eH5" id="ap8-Lj-moX"/>
                         <outlet property="lblMovieCategories" destination="Hdt-Em-mVE" id="2IU-ze-MRh"/>
@@ -358,7 +360,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qx1-ow-8h1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="410.39999999999998" y="843.8423645320197"/>
+            <point key="canvasLocation" x="749.60000000000002" y="843.32833583208401"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MwS-vh-Y2S">
@@ -377,6 +379,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jkV-Jd-gwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-442" y="134"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="q7E-ji-f02">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YlW-gr-iAr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rl4-Up-lsz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sD0-lv-fo2" kind="relationship" relationship="rootViewController" id="mPM-fg-YDf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Csa-2U-AnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-174" y="843"/>
         </scene>
     </scenes>
     <resources>
