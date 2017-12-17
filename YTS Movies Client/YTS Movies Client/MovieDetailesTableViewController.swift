@@ -23,6 +23,7 @@ class MovieDetailesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         id = 10
+        createObserverForReloadData()
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 1 {
@@ -34,5 +35,15 @@ class MovieDetailesTableViewController: UITableViewController {
     }
     func updateUI(){
         let viewModel=ViewModelForSingleMovie()
+    }
+    func createObserverForReloadData(){
+        let notifiReload = Notification.Name(notificationForReloadTable)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewModelForSingleMovie.reloadData) , name: notifiReload, object: nil)
+    }
+    @objc func reloadData(notification:NSNotification){
+        //print("Get Notified")
+        DispatchQueue.main.async {
+            
+        }
     }
 }
