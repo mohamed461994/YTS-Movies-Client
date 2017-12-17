@@ -13,6 +13,11 @@ class MoviesData{
     private var url:String?
     var requestPageNumberOfMoviesData = 1
     private var parameters: Parameters?
+    var singleMovieDetails:(id:Int,title:String,rating:Float, category:[String],imgURL:String,year:Int,likes:Int,description:String ,downloads:Int
+        )?{
+        didSet{
+        }
+    }
     var requestedFromFirstViewController=true
     private var parseIsDone:Bool?{
         didSet{
@@ -60,8 +65,7 @@ extension MoviesData{
             }
         }
         else{
-            let movie = movesData!["movie"] as? [String:Any]
-            print(movie)
+            parsingDataForSeconViewController(movie: (movesData!["movie"] as? [String:Any])!)
         }
 
         parseIsDone=true
@@ -73,4 +77,12 @@ extension MoviesData{
         parameters!["page"] = requestPageNumberOfMoviesData
         getJSON()
     }
+}
+extension MoviesData{
+    func parsingDataForSeconViewController(movie: [String:Any]){
+        print("it's Work")
+
+        
+    }
+    
 }
