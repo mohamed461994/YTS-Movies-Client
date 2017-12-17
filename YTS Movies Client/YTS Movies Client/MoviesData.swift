@@ -13,6 +13,7 @@ class MoviesData{
     private var url:String?
     var requestPageNumberOfMoviesData = 1
     private var parameters: Parameters?
+    var requestedFromFirstViewController=true
     private var parseIsDone:Bool?{
         didSet{
             //push notification to reload data
@@ -25,6 +26,9 @@ class MoviesData{
     }
     init(url:String , parameters: Parameters) {
         self.url = url
+        if parameters["movie_id"] != nil{
+            requestedFromFirstViewController = false
+        }
         self.parameters=parameters
         getJSON()
     }
@@ -33,6 +37,7 @@ class MoviesData{
         let utilityQueue=DispatchQueue.global(qos: .utility)
         Alamofire.request(url!, method: .get,parameters: parameters).responseJSON(queue: utilityQueue){ response in
             if let json = response.result.value {
+                print(json)
                 self.jsonData=json
             }
         }
@@ -43,14 +48,22 @@ extension MoviesData{
     func parseJSON(){
         let allData = jsonData as? [String : Any]
         let movesData = allData!["data"] as? [String : Any]
-        let movies = movesData!["movies"] as? [[String:Any]]
-        for movie in movies! {
-            moviesList.append(Movie(id: movie["id"] as? Int,
-                                    imgURL: movie["medium_cover_image"] as? String,
-                                    name: movie["title_english"] as? String,
-                                    rate:  movie["rating"] as? Float ,
-                                    typeList: (movie["genres"] as? [String])!))
+        print(movesData!)
+        if requestedFromFirstViewController{
+            let movies = movesData!["movies"] as? [[String:Any]]
+            for movie in movies! {
+                moviesList.append(Movie(id: movie["id"] as? Int,
+                                        imgURL: movie["medium_cover_image"] as? String,
+                                        name: movie["title_english"] as? String,
+                                        rate:  movie["rating"] as? Float ,
+                                        typeList: (movie["genres"] as? [String])!))
+            }
         }
+        else{
+            let movie = movesData!["movie"] as? [String:Any]
+            print(movie)
+        }
+
         parseIsDone=true
     }
 }
