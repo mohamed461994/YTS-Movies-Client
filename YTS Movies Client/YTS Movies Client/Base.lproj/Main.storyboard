@@ -346,6 +346,13 @@
                     </tableView>
                     <connections>
                         <outlet property="lblDescription" destination="aaV-QZ-eH5" id="ap8-Lj-moX"/>
+                        <outlet property="lblMovieCategories" destination="Hdt-Em-mVE" id="2IU-ze-MRh"/>
+                        <outlet property="lblMovieDescription" destination="aaV-QZ-eH5" id="TFu-HY-X6x"/>
+                        <outlet property="lblMovieName" destination="PgO-Ay-M4c" id="6Lw-fp-daY"/>
+                        <outlet property="lblMovieYear" destination="oPz-Ve-uHB" id="gck-Mt-bUg"/>
+                        <outlet property="lblNumberOfDownloads" destination="aaS-0B-5ZG" id="FqK-Wy-xlQ"/>
+                        <outlet property="lblNumberOfLikes" destination="eNe-tf-cft" id="V5Z-FL-ex7"/>
+                        <outlet property="lblRatting" destination="86n-rL-oG8" id="HRu-Ld-eQN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qx1-ow-8h1" userLabel="First Responder" sceneMemberID="firstResponder"/>
