@@ -11,6 +11,7 @@ let notificationForReloadTable="reload"
 class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
     var viewModel=ViewModel()
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var moviesTableView: UITableView!
     @IBOutlet weak var searchLTxtField: UITextField!{
         didSet{searchLTxtField.delegate=self}
@@ -21,6 +22,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        spinner?.startAnimating()
         self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
         createNotificationForReloadData()
     }
@@ -44,6 +46,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         //print("Get Notified")
         DispatchQueue.main.async {
             self.moviesTableView.reloadData()
+            self.spinner?.stopAnimating()
         }
     }
 }

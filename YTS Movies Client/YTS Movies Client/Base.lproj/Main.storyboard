@@ -29,6 +29,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="GsI-tq-yja">
+                                <rect key="frame" x="150" y="306" width="20" height="20"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0YP-OB-2hE">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -118,9 +121,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="GsI-tq-yja" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4kT-aS-53h"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="0YP-OB-2hE" secondAttribute="top" constant="64" id="Fle-l4-E7y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0YP-OB-2hE" secondAttribute="trailing" id="U4N-kR-CAS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0YP-OB-2hE" secondAttribute="bottom" id="b3R-XW-45d"/>
+                            <constraint firstItem="GsI-tq-yja" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bH2-O2-R5E"/>
                             <constraint firstItem="0YP-OB-2hE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zCO-kK-7A0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -138,6 +143,7 @@
                     <connections>
                         <outlet property="moviesTableView" destination="0YP-OB-2hE" id="hF4-Jp-tJ1"/>
                         <outlet property="searchLTxtField" destination="04C-g3-gXi" id="r2h-Ue-aDp"/>
+                        <outlet property="spinner" destination="GsI-tq-yja" id="HlI-gi-T53"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
