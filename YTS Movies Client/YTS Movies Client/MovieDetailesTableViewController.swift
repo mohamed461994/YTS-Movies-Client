@@ -7,12 +7,16 @@
 //
 
 import UIKit
-
+import Kingfisher
 class MovieDetailesTableViewController: UITableViewController {
     @IBOutlet weak var lblDescription: UILabel!
     var id:Int?{
-        didSet{updateUI()}
+        didSet{
+         viewModel = ViewModelForSingleMovie(id: id!)
+        }
     }
+    @IBOutlet weak var movieImage: UIImageView!
+    var viewModel : ViewModelForSingleMovie?
     @IBOutlet weak var lblMovieName: UILabel!
     @IBOutlet weak var lblMovieCategories: UILabel!
     @IBOutlet weak var lblMovieYear: UILabel!
@@ -22,7 +26,7 @@ class MovieDetailesTableViewController: UITableViewController {
     @IBOutlet weak var lblMovieDescription: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        id = 10
+        id = 1000
         createObserverForReloadData()
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -33,17 +37,21 @@ class MovieDetailesTableViewController: UITableViewController {
             return super.tableView(tableView, heightForRowAt: indexPath)
         }
     }
-    func updateUI(){
-        let viewModel=ViewModelForSingleMovie()
-    }
     func createObserverForReloadData(){
         let notifiReload = Notification.Name(notificationForReloadTable)
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewModelForSingleMovie.reloadData) , name: notifiReload, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MovieDetailesTableViewController.reloadData) , name: notifiReload, object: nil)
     }
     @objc func reloadData(notification:NSNotification){
-        //print("Get Notified")
+        print("Get Notified")
         DispatchQueue.main.async {
-            
+            self.lblRatting.text = self.viewModel?.getRating()
+            self.lblMovieName.text = self.viewModel?.getTitle()
+            self.lblMovieYear.text = self.viewModel?.getYear()
+            self.lblDescription.text = self.viewModel?.getDescription()
+            self.lblNumberOfLikes.text = self.viewModel?.getLikesCount()
+            self.lblNumberOfDownloads.text = self.viewModel?.getDownloadsCount()
+            self.lblMovieCategories.text = self.viewModel?.getCategores()
+            self.movieImage.kf.setImage(with: self.viewModel?.getImgURL() )
         }
     }
 }

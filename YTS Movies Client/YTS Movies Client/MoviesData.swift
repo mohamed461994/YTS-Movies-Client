@@ -38,7 +38,7 @@ class MoviesData{
         let utilityQueue=DispatchQueue.global(qos: .utility)
         Alamofire.request(url!, method: .get,parameters: parameters).responseJSON(queue: utilityQueue){ response in
             if let json = response.result.value {
-                print(json)
+                //print(json)
                 self.jsonData=json
             }
         }
@@ -49,7 +49,7 @@ extension MoviesData{
     func parseJSON(){
         let allData = jsonData as? [String : Any]
         let movesData = allData!["data"] as? [String : Any]
-        print(movesData!)
+        //print(movesData!)
         if requestedFromFirstViewController{
             let movies = movesData!["movies"] as? [[String:Any]]
             for movie in movies! {
@@ -63,7 +63,6 @@ extension MoviesData{
         else{
             parsingDataForSeconViewController(movie: (movesData!["movie"] as? [String:Any])!)
         }
-
         parseIsDone=true
     }
 }
@@ -86,16 +85,6 @@ extension MoviesData{
             ,description:(movie["description_intro"] as? String)!
             ,downloads: (movie["download_count"] as? Int)!
         )
-        print(singleMovieDetails?.id)
-        print(singleMovieDetails?.title)
-        print(singleMovieDetails?.rating)
-        print(singleMovieDetails?.imgURL)
-        print(singleMovieDetails?.year)
-        print(singleMovieDetails?.likes)
-        print(singleMovieDetails?.description)
-        print(singleMovieDetails?.downloads)
-        print(singleMovieDetails?.category)
-        print(singleMovieDetails!)
     }
     
 }

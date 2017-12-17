@@ -353,6 +353,7 @@
                         <outlet property="lblNumberOfDownloads" destination="aaS-0B-5ZG" id="FqK-Wy-xlQ"/>
                         <outlet property="lblNumberOfLikes" destination="eNe-tf-cft" id="V5Z-FL-ex7"/>
                         <outlet property="lblRatting" destination="86n-rL-oG8" id="HRu-Ld-eQN"/>
+                        <outlet property="movieImage" destination="s9G-A5-zBa" id="Yt0-AM-hjw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qx1-ow-8h1" userLabel="First Responder" sceneMemberID="firstResponder"/>

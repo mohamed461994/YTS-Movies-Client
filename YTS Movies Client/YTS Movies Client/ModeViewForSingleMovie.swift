@@ -22,8 +22,8 @@ class ViewModelForSingleMovie{
     func getDownloadsCount()->String{
         return String((movieData?.singleMovieDetails?.downloads)!)
     }
-    func getYear()->Int{
-        return (movieData?.singleMovieDetails?.year)!
+    func getYear()->String{
+        return String((movieData?.singleMovieDetails?.year)!)
     }
     func getCategores()->String{
         let lis = (movieData?.singleMovieDetails?.category)!
@@ -33,8 +33,8 @@ class ViewModelForSingleMovie{
         let rat = (movieData?.singleMovieDetails?.rating)!
         return String(rat)
     }
-    func getImgURL()->String{
-        return (movieData?.singleMovieDetails?.imgURL)!
+    func getImgURL()->URL{
+        return URL( string:(movieData?.singleMovieDetails?.imgURL)!)!
     }
     func getLikesCount()->String{
         return String((movieData?.singleMovieDetails?.likes)!)
