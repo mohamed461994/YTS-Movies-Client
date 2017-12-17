@@ -46,6 +46,7 @@ class MovieDetailesTableViewController: UITableViewController {
         DispatchQueue.main.async {
             self.lblRatting.text = self.viewModel?.getRating()
             self.lblMovieName.text = self.viewModel?.getTitle()
+            self.title = self.viewModel?.getTitle()
             self.lblMovieYear.text = self.viewModel?.getYear()
             self.lblDescription.text = self.viewModel?.getDescription()
             self.lblNumberOfLikes.text = self.viewModel?.getLikesCount()
