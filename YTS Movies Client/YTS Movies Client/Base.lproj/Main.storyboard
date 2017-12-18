@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -286,11 +287,11 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="1000" id="Nux-Z1-wDB">
-                                        <rect key="frame" x="0.0" y="287" width="375" height="1000"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="314" id="Nux-Z1-wDB">
+                                        <rect key="frame" x="0.0" y="287" width="375" height="314"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nux-Z1-wDB" id="esT-4E-aix">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="999.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="313.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFS-D5-Wb9">
@@ -302,26 +303,21 @@
                                                     <color key="textColor" red="0.96673144369187058" green="1" blue="0.90533654489924642" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0Rk-kq-zeG">
-                                                    <rect key="frame" x="10" y="36" width="355" height="477.5"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="42" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaV-QZ-eH5">
-                                                            <rect key="frame" x="0.0" y="0.0" width="355" height="477.5"/>
-                                                            <string key="text">In Talbot, Ohio, a father's need for substitutes himself: taking a train In Talbot, Ohio, a father's need for surgeries puts the family in a financial bind. His son Vince, an electrician, overhears a man talking about making a fortune in just a day. When the man overdoses on drugs, Vince finds instructions and a cell phone that the man has received and substitutes himself: taking a train to New York and awaiting contact. He has no idea what it's about. He ends up at a remote house where wealthy men bet on who will survive a complicated game of Russian roulette: he's number 13. In flashbacks we meet other contestants, including a man whose brother takes him out of a mental institution in order to compete. Can Vince be the last one standing?</string>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                            <color key="textColor" red="1" green="0.97996072772106202" blue="0.94420363431613341" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="H8k-2m-rsf">
+                                                    <rect key="frame" x="8" y="36" width="359" height="269.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kFS-D5-Wb9" secondAttribute="trailing" constant="179" id="Bfs-Ei-dOD"/>
-                                                <constraint firstItem="0Rk-kq-zeG" firstAttribute="top" secondItem="kFS-D5-Wb9" secondAttribute="bottom" constant="10" id="Px5-Wo-4oJ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="H8k-2m-rsf" secondAttribute="bottom" id="Dxq-WB-Zv4"/>
+                                                <constraint firstItem="H8k-2m-rsf" firstAttribute="top" secondItem="kFS-D5-Wb9" secondAttribute="bottom" constant="10" id="Fk5-I4-F3Y"/>
+                                                <constraint firstItem="H8k-2m-rsf" firstAttribute="trailing" secondItem="esT-4E-aix" secondAttribute="trailingMargin" id="Nbd-eH-APM"/>
+                                                <constraint firstItem="H8k-2m-rsf" firstAttribute="leading" secondItem="esT-4E-aix" secondAttribute="leadingMargin" id="S5J-tH-Kg9"/>
                                                 <constraint firstItem="kFS-D5-Wb9" firstAttribute="top" secondItem="esT-4E-aix" secondAttribute="top" constant="5" id="cMl-qr-ECh"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0Rk-kq-zeG" secondAttribute="bottom" constant="10" id="eM2-VY-wUA"/>
-                                                <constraint firstAttribute="trailing" secondItem="0Rk-kq-zeG" secondAttribute="trailing" constant="10" id="orx-tm-Tlt"/>
-                                                <constraint firstItem="0Rk-kq-zeG" firstAttribute="leading" secondItem="esT-4E-aix" secondAttribute="leading" constant="10" id="pbA-56-YIf"/>
                                                 <constraint firstItem="kFS-D5-Wb9" firstAttribute="leading" secondItem="esT-4E-aix" secondAttribute="leading" constant="10" id="wnI-gc-9W2"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -337,9 +333,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="gvh-nT-bim"/>
                     <connections>
-                        <outlet property="lblDescription" destination="aaV-QZ-eH5" id="ap8-Lj-moX"/>
+                        <outlet property="lblDescription" destination="H8k-2m-rsf" id="TrM-r5-Z7L"/>
                         <outlet property="lblMovieCategories" destination="Hdt-Em-mVE" id="2IU-ze-MRh"/>
-                        <outlet property="lblMovieDescription" destination="aaV-QZ-eH5" id="TFu-HY-X6x"/>
                         <outlet property="lblMovieName" destination="PgO-Ay-M4c" id="6Lw-fp-daY"/>
                         <outlet property="lblMovieYear" destination="oPz-Ve-uHB" id="gck-Mt-bUg"/>
                         <outlet property="lblNumberOfDownloads" destination="aaS-0B-5ZG" id="FqK-Wy-xlQ"/>

@@ -10,7 +10,7 @@ let notificationForLoadData = "loadDataWhenNotify"
 import UIKit
 import Kingfisher
 class MovieDetailesTableViewController: UITableViewController {
-    @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak var lblDescription: UITextView!
     var id:Int?{
         didSet{
          viewModel = ViewModelForSingleMovie(id: id!)
