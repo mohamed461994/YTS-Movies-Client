@@ -9,7 +9,6 @@ import Kingfisher
 let notificationForReloadTable="reload"
 class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate{
     var viewModel=ViewModel()
-    
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var moviesTableView: UITableView!
     override func viewDidLoad() {
@@ -26,7 +25,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         searchBar.delegate=self
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(searchBar.text!)
+        viewModel = ViewModel(searchText: searchBar.text!)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows()

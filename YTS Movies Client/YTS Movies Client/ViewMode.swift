@@ -15,6 +15,9 @@ class ViewModel{
     }
     //=“flatliners”
     init(searchText:String){
+        if moviesData != nil {
+            moviesData?.moviesList=[]
+        }
         let urlForList="https://yts.am/api/v2/list_movies.json"
         moviesData = MoviesData(url: urlForList,parameters:["query_term":searchText])
     }
