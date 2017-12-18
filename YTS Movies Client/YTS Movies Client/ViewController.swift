@@ -26,7 +26,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         searchBar.delegate=self
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print(searchBar.text)
+        print(searchBar.text!)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows()
