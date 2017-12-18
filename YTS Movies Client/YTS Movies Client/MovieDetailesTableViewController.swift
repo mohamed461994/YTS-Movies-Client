@@ -30,6 +30,7 @@ class MovieDetailesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.isHidden = true
         createObserverForReloadData()
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -51,16 +52,17 @@ class MovieDetailesTableViewController: UITableViewController {
      This function called when notification is pushed
      */
     @objc func reloadData(notification:NSNotification){
-        DispatchQueue.main.async {
-            self.lblRatting.text = self.viewModel?.getRating()
-            self.lblMovieName.text = self.viewModel?.getTitle()
-            self.title = self.viewModel?.getTitle()
-            self.lblMovieYear.text = self.viewModel?.getYear()
-            self.lblDescription.text = self.viewModel?.getDescription()
-            self.lblNumberOfLikes.text = self.viewModel?.getLikesCount()
-            self.lblNumberOfDownloads.text = self.viewModel?.getDownloadsCount()
-            self.lblMovieCategories.text = self.viewModel?.getCategores()
-            self.movieImage.kf.setImage(with: self.viewModel?.getImgURL() )
+        DispatchQueue.main.async { [weak self] in
+            self?.lblRatting.text = self?.viewModel?.getRating()
+            self?.lblMovieName.text = self?.viewModel?.getTitle()
+            self?.title = self?.viewModel?.getTitle()
+            self?.lblMovieYear.text = self?.viewModel?.getYear()
+            self?.lblDescription.text = self?.viewModel?.getDescription()
+            self?.lblNumberOfLikes.text = self?.viewModel?.getLikesCount()
+            self?.lblNumberOfDownloads.text = self?.viewModel?.getDownloadsCount()
+            self?.lblMovieCategories.text = self?.viewModel?.getCategores()
+            self?.movieImage.kf.setImage(with: self?.viewModel?.getImgURL() )
+            self?.tableView.isHidden = false
         }
     }
 }

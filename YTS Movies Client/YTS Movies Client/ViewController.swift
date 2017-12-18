@@ -65,10 +65,10 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
          This function called when data is ready to be presented
      */
     @objc func reload(notification:NSNotification){
-        DispatchQueue.main.async {
-            self.moviesTableView.reloadData()
-            self.spinner?.stopAnimating()
-            self.moviesTableView.isHidden = false
+        DispatchQueue.main.async {[weak self] in
+            self?.moviesTableView.reloadData()
+            self?.spinner?.stopAnimating()
+            self?.moviesTableView.isHidden = false
         }
         if self.viewModel.ckeckIfReturnedMovieNil(){
             presentAllert()
