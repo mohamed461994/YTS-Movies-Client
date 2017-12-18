@@ -52,11 +52,13 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.reload) , name: notifiReload, object: nil)
     }
     @objc func reload(notification:NSNotification){
-        //print("Get Notified")
         DispatchQueue.main.async {
             self.moviesTableView.reloadData()
             self.spinner?.stopAnimating()
             self.moviesTableView.isHidden = false
+        }
+        if self.viewModel.ckeckIfReturnedMovieNil(){
+            print("no data back from searching request")
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
