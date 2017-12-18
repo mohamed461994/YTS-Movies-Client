@@ -48,13 +48,14 @@ extension MoviesData{
         let movesData = allData!["data"] as? [String : Any]
         //print(movesData!)
         if requestedFromFirstViewController{
-            let movies = movesData!["movies"] as? [[String:Any]]
-            for movie in movies! {
-                moviesList.append(Movie(id: movie["id"] as? Int,
-                                        imgURL: movie["medium_cover_image"] as? String,
-                                        name: movie["title_english"] as? String,
-                                        rate:  movie["rating"] as? Float ,
-                                        typeList: (movie["genres"] as? [String])!))
+            if let movies = movesData!["movies"] as? [[String:Any]]{
+                for movie in movies {
+                    moviesList.append(Movie(id: movie["id"] as? Int,
+                                            imgURL: movie["medium_cover_image"] as? String,
+                                            name: movie["title_english"] as? String,
+                                            rate:  movie["rating"] as? Float ,
+                                            typeList: (movie["genres"] as? [String])!))
+                }
             }
         }
         else{
