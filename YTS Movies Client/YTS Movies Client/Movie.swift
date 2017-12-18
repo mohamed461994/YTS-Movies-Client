@@ -7,6 +7,9 @@
 //
 
 import Foundation
+/**
+     this struct represent movie information for first view controller
+ */
 struct Movie {
     var id:Int?
     var imgURL:String?
