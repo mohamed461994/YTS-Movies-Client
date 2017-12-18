@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		542325B64309CF9E0202FBFA /* Pods_YTS_Movies_Client.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BBA4B2C2CC5278BC8A5962D /* Pods_YTS_Movies_Client.framework */; };
-		D908A2951FE6E8CC008E31EB /* ModeViewForSingleMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908A2941FE6E8CC008E31EB /* ModeViewForSingleMovie.swift */; };
+		D908A2951FE6E8CC008E31EB /* ViewModeForSingleMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D908A2941FE6E8CC008E31EB /* ViewModeForSingleMovie.swift */; };
 		D940FD5C1FE46CCF00DFA7CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FD5B1FE46CCF00DFA7CB /* AppDelegate.swift */; };
 		D940FD5E1FE46CCF00DFA7CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D940FD5D1FE46CCF00DFA7CB /* ViewController.swift */; };
 		D940FD611FE46CCF00DFA7CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D940FD5F1FE46CCF00DFA7CB /* Main.storyboard */; };
@@ -25,7 +25,7 @@
 		0B8281CD6906AE8EDB4EF10D /* Pods-YTS Movies Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTS Movies Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-YTS Movies Client/Pods-YTS Movies Client.release.xcconfig"; sourceTree = "<group>"; };
 		9BBA4B2C2CC5278BC8A5962D /* Pods_YTS_Movies_Client.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YTS_Movies_Client.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAAECF04162C899BE01EE831 /* Pods-YTS Movies Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YTS Movies Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YTS Movies Client/Pods-YTS Movies Client.debug.xcconfig"; sourceTree = "<group>"; };
-		D908A2941FE6E8CC008E31EB /* ModeViewForSingleMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeViewForSingleMovie.swift; sourceTree = "<group>"; };
+		D908A2941FE6E8CC008E31EB /* ViewModeForSingleMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModeForSingleMovie.swift; sourceTree = "<group>"; };
 		D940FD581FE46CCF00DFA7CB /* YTS Movies Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "YTS Movies Client.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D940FD5B1FE46CCF00DFA7CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D940FD5D1FE46CCF00DFA7CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 				D940FD5F1FE46CCF00DFA7CB /* Main.storyboard */,
 				D9DAC5701FE6B66C009D0059 /* MovieDetailesTableViewController.swift */,
 				D940FD731FE5C20600DFA7CB /* MoviesData.swift */,
-				D908A2941FE6E8CC008E31EB /* ModeViewForSingleMovie.swift */,
+				D908A2941FE6E8CC008E31EB /* ViewModeForSingleMovie.swift */,
 				D940FD6F1FE5120D00DFA7CB /* ViewMode.swift */,
 				D940FD6D1FE4769F00DFA7CB /* MoviesTableViewCell.swift */,
 				D940FD671FE46CCF00DFA7CB /* Info.plist */,
@@ -249,7 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D908A2951FE6E8CC008E31EB /* ModeViewForSingleMovie.swift in Sources */,
+				D908A2951FE6E8CC008E31EB /* ViewModeForSingleMovie.swift in Sources */,
 				D940FD6E1FE4769F00DFA7CB /* MoviesTableViewCell.swift in Sources */,
 				D9DAC5711FE6B66C009D0059 /* MovieDetailesTableViewController.swift in Sources */,
 				D940FD701FE5120D00DFA7CB /* ViewMode.swift in Sources */,
