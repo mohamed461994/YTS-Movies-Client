@@ -43,4 +43,10 @@ class ViewModel{
     func getMovieId(indexPath:IndexPath)-> Int{
         return (moviesData?.moviesList[indexPath.row].id)!
     }
+    func ckeckIfReturnedMovieNil()->Bool{
+        if (moviesData?.moviesList.isEmpty)!{
+            return true
+        }
+        return false
+    }
 }
