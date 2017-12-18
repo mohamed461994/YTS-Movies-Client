@@ -13,6 +13,11 @@ class ViewModel{
         let urlForList="https://yts.am/api/v2/list_movies.json"
         moviesData = MoviesData(url: urlForList,parameters:["page":1])
     }
+    //=“flatliners”
+    init(searchText:String){
+        let urlForList="https://yts.am/api/v2/list_movies.json"
+        moviesData = MoviesData(url: urlForList,parameters:["query_term":searchText])
+    }
     func numberOfRows()->Int{
         return moviesData?.moviesList.count ?? 0
     }
