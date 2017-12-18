@@ -58,7 +58,14 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
             self.moviesTableView.isHidden = false
         }
         if self.viewModel.ckeckIfReturnedMovieNil(){
-            print("no data back from searching request")
+            presentAllert()
+        }
+    }
+    func presentAllert(){
+        let alert = UIAlertController(title: "Sorr!!", message: "but No movies like what you write", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "cancell", style: UIAlertActionStyle.default, handler: nil))
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
