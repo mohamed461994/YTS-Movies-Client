@@ -6,18 +6,21 @@
 //  Copyright © 2017 MohamedSh. All rights reserved.
 import UIKit
 import Kingfisher
-let notificationForReloadTable="reload"
+let notificationForReloadTable="reloadDataInMainViewController"
 class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate{
     var viewModel=ViewModel()
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var moviesTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        prepareUI()
+        createObserverForReloadData()
+    }
+    func prepareUI(){
         creatSearchBar()
         moviesTableView.isHidden = true
         spinner?.startAnimating()
         self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
-        createNotificationForReloadData()
     }
     func creatSearchBar(){
         let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: CGFloat(70)))
@@ -44,7 +47,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
             viewModel.getMoreData()
         }
     }
-    func createNotificationForReloadData(){
+    func createObserverForReloadData(){
         let notifiReload = Notification.Name(notificationForReloadTable)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.reload) , name: notifiReload, object: nil)
     }
