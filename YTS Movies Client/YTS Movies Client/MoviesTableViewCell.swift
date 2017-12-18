@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// this class is representing cell for table view
 class MoviesTableViewCell: UITableViewCell {
     @IBOutlet weak var lblRating: UILabel!
     @IBOutlet weak var lblCategory: UILabel!
