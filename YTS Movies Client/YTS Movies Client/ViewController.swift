@@ -50,7 +50,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let lastItem = viewModel.numberOfRows() - 1
-        if indexPath.row == lastItem {
+        if indexPath.row == lastItem && lastItem % 19 == 0{
             viewModel.getMoreData()
         }
     }
