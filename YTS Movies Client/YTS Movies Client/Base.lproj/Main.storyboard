@@ -35,9 +35,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="SSt-i9-pW1">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="SSt-i9-pW1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="GsI-tq-yja">
                                 <rect key="frame" x="150" y="306" width="20" height="20"/>
@@ -130,13 +129,17 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="GsI-tq-yja" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4kT-aS-53h"/>
+                            <constraint firstAttribute="trailing" secondItem="SSt-i9-pW1" secondAttribute="trailing" id="77x-DG-8U1"/>
+                            <constraint firstAttribute="bottom" secondItem="SSt-i9-pW1" secondAttribute="bottom" id="7Ae-EP-lEq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="0YP-OB-2hE" secondAttribute="top" constant="64" id="Fle-l4-E7y"/>
+                            <constraint firstItem="SSt-i9-pW1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TVW-9b-BsK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0YP-OB-2hE" secondAttribute="trailing" id="U4N-kR-CAS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0YP-OB-2hE" secondAttribute="bottom" id="b3R-XW-45d"/>
                             <constraint firstItem="GsI-tq-yja" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bH2-O2-R5E"/>
+                            <constraint firstItem="SSt-i9-pW1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bpm-yg-07h"/>
                             <constraint firstItem="0YP-OB-2hE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zCO-kK-7A0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

@@ -35,6 +35,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
         searchBar.delegate=self
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        moviesTableView.isHidden = false
         viewModel = ViewModel(searchText: searchBar.text!)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -80,6 +81,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     func presentAllert(){
         let alert = UIAlertController(title: "Sorr!!", message: "but No movies like what you write", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "cancell", style: UIAlertActionStyle.default, handler: nil))
+        moviesTableView.isHidden = true
         DispatchQueue.main.async {
             self.present(alert, animated: true, completion: nil)
         }
