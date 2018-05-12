@@ -9,15 +9,10 @@ let notificationForLoadData = "loadDataWhenNotify"
 
 import UIKit
 import Kingfisher
+
 class MovieDetailesTableViewController: UITableViewController {
+    
     @IBOutlet weak var lblDescription: UITextView!
-    /// this varible is used to get all data for spesific ID
-    var id:Int?{
-        didSet{
-         viewModel = DetailsViewModel(id: id!)
-        }
-    }
-    var viewModel : DetailsViewModel?
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var lblMovieName: UILabel!
     @IBOutlet weak var lblMovieCategories: UILabel!
@@ -27,12 +22,21 @@ class MovieDetailesTableViewController: UITableViewController {
     @IBOutlet weak var lblNumberOfDownloads: UILabel!
     @IBOutlet weak var lblMovieDescription: UILabel!
     
+    /// this varible is used to get all data for spesific ID
     
+    var viewModel : DetailsViewModel?
+    var id:Int?{
+        didSet{
+         viewModel = DetailsViewModel(id: id!)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.isHidden = true
         createObserverForReloadData()
     }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 1 {
             return CGFloat(lblDescription.frame.height + 150 )
@@ -40,17 +44,15 @@ class MovieDetailesTableViewController: UITableViewController {
             return super.tableView(tableView, heightForRowAt: indexPath)
         }
     }
-    /**
-     This function to create observer to get notifies when data is ready
-     */
+    
+    ///this function to create observer to get notifies when data is ready
     func createObserverForReloadData(){
         let notifiReload = Notification.Name(notificationForLoadData)
         NotificationCenter.default.addObserver(self, selector: #selector(MovieDetailesTableViewController.reloadData) , name: notifiReload, object: nil)
     }
-    /**
-     This function called when notification is pushed
-     */
-    @objc func reloadData(notification:NSNotification){
+    
+    ///this function called when notification is pushed
+    @objc func reloadData(notification:NSNotification) {
         DispatchQueue.main.async { [weak self] in
             self?.lblRatting.text = self?.viewModel?.getRating()
             self?.lblMovieName.text = self?.viewModel?.getTitle()

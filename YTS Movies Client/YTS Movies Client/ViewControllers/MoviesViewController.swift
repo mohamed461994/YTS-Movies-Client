@@ -6,10 +6,12 @@
 //  Copyright © 2017 MohamedSh. All rights reserved.
 import UIKit
 import Kingfisher
+
 /// this varible is used to create notification observer pattern 
 let notificationForReloadTable="reloadDataInMainViewController"
-class MoviesViewController: UIViewController , UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate{
-    var viewModel=MoviesViewModel()
+class MoviesViewController: UIViewController , UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate {
+    
+    var viewModel = MoviesViewModel()
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var moviesTableView: UITableView!
     override func viewDidLoad() {
@@ -20,7 +22,7 @@ class MoviesViewController: UIViewController , UITableViewDelegate,UITableViewDa
     /**
      This function is used to prepare view controller views when load for first time
      */
-    func prepareUI(){
+    func prepareUI() {
         creatSearchBar()
         moviesTableView.isHidden = true
         spinner?.startAnimating()
@@ -29,7 +31,7 @@ class MoviesViewController: UIViewController , UITableViewDelegate,UITableViewDa
     /**
      This function cis used to creat search bar
      */
-    func creatSearchBar(){
+    func creatSearchBar() {
         let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: CGFloat(70)))
         moviesTableView.tableHeaderView = searchBar
         searchBar.delegate=self
@@ -58,15 +60,17 @@ class MoviesViewController: UIViewController , UITableViewDelegate,UITableViewDa
     /**
      This function used to creat observer to get notified when data is ready
      */
-    func createObserverForReloadData(){
+    func createObserverForReloadData() {
+        
         let notifiReload = Notification.Name(notificationForReloadTable)
         NotificationCenter.default.addObserver(self, selector: #selector(MoviesViewController.reload) , name: notifiReload, object: nil)
     }
     /**
          This function called when data is ready to be presented
      */
-    @objc func reload(notification:NSNotification){
-        DispatchQueue.main.async {[weak self] in
+    @objc func reload(notification:NSNotification) {
+        
+        DispatchQueue.main.async { [weak self] in
             self?.moviesTableView.reloadData()
             self?.spinner?.stopAnimating()
             self?.moviesTableView.isHidden = false
@@ -78,7 +82,7 @@ class MoviesViewController: UIViewController , UITableViewDelegate,UITableViewDa
     /**
       this function to present allert in case if there is no Movies like searching text
      */
-    func presentAllert(){
+    func presentAllert() {
         let alert = UIAlertController(title: "Sorr!!", message: "but No movies like what you write", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "cancell", style: UIAlertActionStyle.default, handler: nil))
         moviesTableView.isHidden = true
@@ -87,7 +91,7 @@ class MoviesViewController: UIViewController , UITableViewDelegate,UITableViewDa
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SelecteMovie"{
+        if segue.identifier == "SelecteMovie" {
             if let vC = segue.destination as? MovieDetailesTableViewController {
                 vC.id = viewModel.getMovieId(indexPath: (moviesTableView.indexPathForSelectedRow)!)
             }
