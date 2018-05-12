@@ -8,11 +8,11 @@
 
 import Foundation
 /// ViewModel For MVVM
-class ViewModelForSingleMovie{
-    var movieData:MoviesData?
-    init(id:Int){
+class DetailsViewModel{
+    var movieData: MoviesAPI?
+    init(id: Int){
         let urlForList="https://yts.am/api/v2/movie_details.json"
-        movieData = MoviesData(url: urlForList,parameters:["movie_id":id])
+        movieData = MoviesAPI(url: urlForList,parameters: ["movie_id": id])
     }
     /**
      this function is used to return title for a movie

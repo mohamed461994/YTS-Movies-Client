@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MoviesViewController.swift
 //  YTS Movies Client
 //
 //  Created by MohamedSh on 12/15/17.
@@ -8,8 +8,8 @@ import UIKit
 import Kingfisher
 /// this varible is used to create notification observer pattern 
 let notificationForReloadTable="reloadDataInMainViewController"
-class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate{
-    var viewModel=ViewModel()
+class MoviesViewController: UIViewController , UITableViewDelegate,UITableViewDataSource, UISearchBarDelegate{
+    var viewModel=MoviesViewModel()
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var moviesTableView: UITableView!
     override func viewDidLoad() {
@@ -36,7 +36,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         moviesTableView.isHidden = false
-        viewModel = ViewModel(searchText: searchBar.text!)
+        viewModel = MoviesViewModel(searchText: searchBar.text!)
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRows()
@@ -60,7 +60,7 @@ class ViewController: UIViewController , UITableViewDelegate,UITableViewDataSour
      */
     func createObserverForReloadData(){
         let notifiReload = Notification.Name(notificationForReloadTable)
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.reload) , name: notifiReload, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MoviesViewController.reload) , name: notifiReload, object: nil)
     }
     /**
          This function called when data is ready to be presented

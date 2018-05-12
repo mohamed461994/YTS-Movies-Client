@@ -7,12 +7,13 @@
 //
 
 import Foundation
-class ViewModel{
-    var moviesData:MoviesData?
+class MoviesViewModel{
+    
+    var moviesData:MoviesAPI?
     /// first intializer it used for
     init(){
         let urlForList="https://yts.am/api/v2/list_movies.json"
-        moviesData = MoviesData(url: urlForList,parameters:["page":1])
+        moviesData = MoviesAPI(url: urlForList,parameters:["page":1])
     }
     /// second intializer used for searching it takes one parameter for searching using it
     init(searchText:String){
@@ -20,7 +21,7 @@ class ViewModel{
             moviesData?.moviesList=[]
         }
         let urlForList="https://yts.am/api/v2/list_movies.json"
-        moviesData = MoviesData(url: urlForList,parameters:["query_term":searchText])
+        moviesData = MoviesAPI(url: urlForList,parameters:["query_term":searchText])
     }
     /**
      this function used to return movies count

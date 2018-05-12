@@ -14,10 +14,10 @@ class MovieDetailesTableViewController: UITableViewController {
     /// this varible is used to get all data for spesific ID
     var id:Int?{
         didSet{
-         viewModel = ViewModelForSingleMovie(id: id!)
+         viewModel = DetailsViewModel(id: id!)
         }
     }
-    var viewModel : ViewModelForSingleMovie?
+    var viewModel : DetailsViewModel?
     @IBOutlet weak var movieImage: UIImageView!
     @IBOutlet weak var lblMovieName: UILabel!
     @IBOutlet weak var lblMovieCategories: UILabel!

@@ -10,7 +10,7 @@ import Alamofire
 /**
  This class is used to deal with API to get information from yts API
  */
-class MoviesData{
+class MoviesAPI {
     /// this varible is to detect if request is from first view controller or not
     private var requestedFromFirstViewController=true
     /// this list will contains movies information for the first view controller
@@ -50,7 +50,7 @@ class MoviesData{
     }
 }
 
-extension MoviesData{
+extension MoviesAPI{
      /// this function is used to mapping json information to moviesList in case of requesc from first view controller or to tuble called singleMovieDetails if it's the second view controller
     private func parseJSON(){
         let allData = jsonData as? [String : Any]
@@ -72,7 +72,7 @@ extension MoviesData{
         parseIsDone=true
     }
 }
-extension MoviesData{
+extension MoviesAPI{
     /**
      this function used to pagination when used scroll down to last cell in table view
      this funtion will make new request to the API with parameter page +1 to last page
@@ -83,7 +83,7 @@ extension MoviesData{
         getJSON()
     }
 }
-extension MoviesData{
+extension MoviesAPI{
     /// this function gets information of a single movie and set it to the tuble singleMovieDetails
     private func parsingDataForSeconViewController(movie: [String:Any]){
         singleMovieDetails = (id: (movie["id"] as? Int)!
